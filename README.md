@@ -426,7 +426,7 @@ Contributions are welcome! Please follow these steps:
 
 For issues and questions:
 - Open an issue on GitHub
-- Contact: your-email@example.com
+- Contact: upaharjana2004@example.com
 
 ## 🙏 Acknowledgments
 
