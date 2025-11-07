@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import api from '../../utils/api';
+import { formatDoctorDisplayName } from '../../utils/formatName';
 import { FaUserMd, FaStar, FaSearch, FaFilter } from 'react-icons/fa';
 
 const DoctorList = () => {
@@ -157,7 +158,7 @@ const DoctorList = () => {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-lg font-semibold text-gray-900">
-                          Dr. {doctor.userId.name}
+                          {formatDoctorDisplayName(doctor.userId?.name)}
                         </h3>
                         <p className="text-sm text-primary-600">{doctor.specialization}</p>
                       </div>

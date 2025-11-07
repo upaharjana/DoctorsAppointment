@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import api from '../../utils/api';
+import { formatDoctorDisplayName } from '../../utils/formatName';
 import { FaUsers, FaUserMd, FaCalendarAlt, FaDollarSign, FaCheck, FaTimes } from 'react-icons/fa';
 
 const AdminDashboard = () => {
@@ -160,7 +161,7 @@ const AdminDashboard = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900">
-                          Dr. {doctor.userId?.name}
+                          {formatDoctorDisplayName(doctor.userId?.name)}
                         </h3>
                         <p className="text-sm text-gray-600">{doctor.specialization}</p>
                         <p className="text-sm text-gray-600 mt-2">

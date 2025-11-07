@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Navbar from '../../components/Navbar';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import api from '../../utils/api';
+import { formatDoctorDisplayName } from '../../utils/formatName';
 import { FaUserMd, FaCalendarAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
 
 const BookAppointment = () => {
@@ -142,7 +143,7 @@ const BookAppointment = () => {
               <h3 className="font-semibold text-lg mb-4">Appointment Details</h3>
               <div className="space-y-2 text-sm">
                 <p><strong>Appointment ID:</strong> {bookedAppointment.appointmentId}</p>
-                <p><strong>Doctor:</strong> Dr. {doctor.userId.name}</p>
+                <p><strong>Doctor:</strong> {formatDoctorDisplayName(doctor.userId?.name)}</p>
                 <p><strong>Specialization:</strong> {doctor.specialization}</p>
                 <p><strong>Date:</strong> {new Date(bookedAppointment.appointmentDate).toLocaleDateString()}</p>
                 <p><strong>Time:</strong> {bookedAppointment.timeSlot.startTime} - {bookedAppointment.timeSlot.endTime}</p>
@@ -204,7 +205,7 @@ const BookAppointment = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Dr. {doctor.userId.name}
+                    {formatDoctorDisplayName(doctor.userId?.name)}
                   </h3>
                   <p className="text-sm text-primary-600">{doctor.specialization}</p>
                 </div>
